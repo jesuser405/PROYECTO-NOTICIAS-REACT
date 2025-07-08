@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         if ($pass != $repeatpass) {
             http_response_code(409); // Conflict
             $errorGeneral = "Los password no coinciden";
-            exit;
         }
         $pass = password_hash($pass, PASSWORD_DEFAULT);
         $nombre = $_POST['nombre'];
@@ -31,4 +30,5 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         http_response_code(405); // Método no soportado
         echo "Método no soportado";
 }
+exit;
 
