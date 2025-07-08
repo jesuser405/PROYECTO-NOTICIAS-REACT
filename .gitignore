@@ -1,0 +1,27 @@
+# Node.js / React
+node_modules/
+build/
+dist/
+api/conexion.php
+# PHP
+vendor/
+.env
+composer.lock
+
+# IDE / Editores
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.cache
+
+# Otros
+.env.*
