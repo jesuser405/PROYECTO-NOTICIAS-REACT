@@ -2,9 +2,9 @@
 
 // INI
 $host = "localhost";
-$user = "profeNascor";
-$password = "ablaracurcix";
-$database = "cursoNascor";
+$user = "nuBBDD_USER";
+$password = "TUBBPASSWORD";
+$database = "TUBBDDNombre";
 // Conexión
 try {
    $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8mb4", $user, $password);
