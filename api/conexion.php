@@ -1,10 +1,7 @@
 <?php
 
 // INI
-$host = "localhost";
-$user = "profeNascor";
-$password = "ablaracurcix";
-$database = "cursoNascor";
+
 // Conexión
 try {
    $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8mb4", $user, $password);
