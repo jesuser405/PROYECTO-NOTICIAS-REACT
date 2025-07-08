@@ -2,7 +2,7 @@
 node_modules/
 build/
 dist/
-api/conexion.php
+/api/conexion.php
 # PHP
 vendor/
 .env

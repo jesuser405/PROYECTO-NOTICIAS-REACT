@@ -2,8 +2,8 @@
 
 require_once "functions.php";
 require_once "conexion.php";
-require_once '/api/lib/JWT.php';
-require_once '/api/lib/Key.php';
+require_once 'lib/JWT.php';
+require_once 'lib/Key.php';
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
