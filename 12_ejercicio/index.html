@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        form {
+            background: #fff;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 30px 25px 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        input[type="submit"] {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        input[type="submit"]:hover {
+            background: #0056b3;
+        }
+    </style>
+  </head>
+  <body>
+    <form action="12_ejercicio.php" method="post">
+      <label for="nombre">Nombre del archivo:</label>
+      <input type="text" id="nombre" name="nombre" required />
+      <br />
+      <label for="contenido">Contenido del archivo:</label>
+      <textarea
+        name="contenido"
+        id="contenido"
+        cols="30"
+        rows="10"
+        placeholder="Escribe el contenido del archivo aquí"
+      ></textarea>
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>

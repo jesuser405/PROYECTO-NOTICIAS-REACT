@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de Contacto</title>
+  <style>
+    .error { color: red; }
+  </style>
+</head>
+<body>
+
+<h2>Formulario de Validación</h2>
+<p><span class="error">* campo obligatorio</span></p>
+<form method="post" action="validacciones_input.php">
+  Nombre: <input type="text" name="name" >
+  <span class="error">*</span>
+  <br><br>
+  
+  Correo electrónico: <input type="text" name="email">
+  <span class="error">* </span>
+  <br><br>
+  
+  Página web: <input type="text" name="website" >
+  <span class="error">*</span>
+  <br><br>
+  
+  Comentario: <textarea name="comment" rows="5" cols="40"> </textarea>
+  <br><br>
+
+  <!-- Género deshabilitado por ahora
+  Género:
+  <input type="radio" name="gender" value="female">Femenino
+  <input type="radio" name="gender" value="male">Masculino
+  <span class="error">* <?php echo $genderErr; ?></span>
+  <br><br>
+  -->
+
+  <input type="submit" name="submit" value="Enviar">
+</form>
+
+</body>
+</html>

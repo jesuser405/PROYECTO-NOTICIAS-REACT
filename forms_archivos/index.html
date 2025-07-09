@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+<!-- Formulario para enviar datos a tarjeta.php -->
+<form id="form" action="tarjeta.php" method="post" enctype="multipart/form-data">
+            <br />
+
+            <!-- Campo para el nombre -->
+            Nombre: <input type="text" name="nombre" id="nombre" /><br />
+            <!-- Campo para la edad -->
+            Edad: <input type="number" name="edad" id="edad" /><br />
+            <!-- Campo para el correo electrónico -->
+            Correo: <input type="email" name="correo" id="correo" /><br />
+
+            <!-- Selección de género -->
+            <select name="genero" id="genero">
+                <option value="masculino">Masculino</option>
+                <option value="otro">otro</option>
+                <option value="femenino">Femenino</option></select>
+                
+<br />
+            <!-- Campo para subir un archivo (solo imágenes) -->
+            <input type="file" name="archivo"  accept="imagen/*" /><br />
+            <!-- Checkbox para aceptar términos y condiciones -->
+            <label for="terminos">
+                <input type="checkbox" name="terminos" id="terminos" /> Acepto los
+                terminos y condiciones </label
+            ><br />
+            <!-- Botón para enviar el formulario -->
+            <input type="submit" value="Enviar" />
+            <!-- Botón para limpiar el formulario -->
+            <input type="reset" value="Limpiar" />
+            <!-- Botón para cancelar y redirigir a tarjeta.php -->
+            <input
+                type="button"
+                value="Cancelar"
+                onclick="window.location.href='tarjeta.php'"
+            />
+        </form>
+    </body>
+</html>

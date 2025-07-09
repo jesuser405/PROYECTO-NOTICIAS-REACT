@@ -2,15 +2,13 @@
 
 require_once "functions.php";
 require "conexion.php";
+require_once 'authToken.php';
 
-if (!isset($_GET['id']) || empty($_GET['id'])) {
-    header('location: index.php');
-}
 
 try {
-    $id = intval($_GET['id']);
+    $id = intval($_POST['id']);
     if (!esTuya($id)) {
-        http_response_code(405);
+        http_response_code(403); // Cambiado a 403 Forbidden
         $errorGenerl = "No puedes realizar esta acción";
         header('location: noticia.php?id=' . $id . '&error=true');
         exit;
@@ -23,5 +21,5 @@ try {
    // header('location: index.php');
 } catch (Exception $e) {
     http_response_code(500);
-    header('location: noticia.php?id=' . $id . '&error=true');
+    //header('location: noticia.php?id=' . $id . '&error=true');
 }
