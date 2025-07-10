@@ -1,30 +1,33 @@
-<?php 
+<?php
 require_once 'lib/JWT.php';
 require_once 'lib/Key.php';
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-function verificarToken() {
+function verificarToken()
+{
+    $hashPropio = 'gjsadhfhsbjf&183kdsjfghmgnfdnqhwlqhwqpwqoopiwyrwqjmwqkjmmjqlwmje'; // Cambia esto por tu propia clave secreta
+
     $headers = getallheaders();
-    if (!isset($headers['Authorization'])) {
-        http_response_code(401);
-        echo json_encode(['error' => 'Token no proporcionado']);
-        exit;
+    $authorization = $headers['Authorization'] ?? $headers['authorization'] ?? null;
+
+    if (!$authorization) {
+        echo "Token no proporcionado";
+        return false;
     }
-    
-    $token = explode(' ', $headers['Authorization'])[1] ?? '';
-    
+
+    $token = str_replace('Bearer ', '', $authorization);
     try {
-        $decoded = JWT::decode($token, new Key('CLAVE_SECRETA', 'HS256'));
+        $decoded = JWT::decode($token, new Key($hashPropio, 'HS256'));
         return $decoded->user_id;
     } catch (Exception $e) {
-        http_response_code(401);
-        echo json_encode(['error' => 'Token inválido']);
-        exit;
+        echo "Token no válido " . $e->getMessage();
+        return false;
     }
 }
-if (!verificarToken()){
+$userID = verificarToken();
+if (!$userID) {
     http_response_code(401);
     echo json_encode(['error' => 'Token no válido']);
     exit;
